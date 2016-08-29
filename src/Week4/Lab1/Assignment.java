@@ -25,7 +25,7 @@ public Assignment(double score) {
 	setGrade(CalculateGrade(getScore()));
 }
 
-public char getGrade() {
+char getGrade() {
 	return grade;
 }
 
