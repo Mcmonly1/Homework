@@ -1,37 +1,45 @@
 package Week4.Lab1;
 public class Assignment {
 
- // Wondering if this is all I need to start making this into an object.
+//
 
-	private float score;
+	private static float score;
+	private char grade;
 		
-
-	public String CalculatedScore(float scoreGrade, String grade){
+//Method to retrieving the Calculated Grade
+	public char CalculatedGrade(float scoreGrade){
 		
 		if (scoreGrade >= 90)
-			grade = "A";
+			grade = 'A';
 		
 		if (scoreGrade >= 80 && scoreGrade < 90)
-			grade = "B";
+			grade = 'B';
 		
 		if (scoreGrade >= 70 && scoreGrade < 80)
-			grade = "C";
+			grade = 'C';
 		
 		if (scoreGrade >= 60 && scoreGrade < 70)
-			grade = "D";
+			grade = 'D';
 		
 		if (scoreGrade < 60)
-			grade = "F";
+			grade = 'F';
 		
 		return grade;
 	}	
-// Is this the proper way to set the scoreGrade from the input of the user on the main class.
+// getters and setters
 	public float getScore(){
 		return score;
 	}
 	public void setScore(float scoreGrade){
 		score = scoreGrade;
 	}
+	public void setGrade(char graed){
+		grade = graed;
+	}
+	char getGrade(){
+		return grade;
+	}
+	
 	}	
 	
 
