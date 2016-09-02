@@ -1,35 +1,37 @@
 package Week4.Lab1;
-
 public class Assignment {
 
-	private double score;
-	
-private String CalculateGrade(double scoreGrade)
-{
-	String grade = null;
-	if(score > 90)
-		grade = "A";
-	
-	if (score >= 80 && score < 90)
-		grade = "B";
-	
-	if (score >= 70 && score < 80)
-		grade = "C";
-	
-	if (score >= 60 && score < 70)
-		grade = "D";
-	
-	else
-		grade = "F";
-	
-	return grade;
-}
+ // Wondering if this is all I need to start making this into an object.
 
-private double getScore(){
-	return score;
+	private float score;
+		
+
+	public String CalculatedScore(float scoreGrade, String grade){
+		
+		if (scoreGrade >= 90){
+			grade = "A";
+		}
+		else if (scoreGrade >= 80 && scoreGrade < 90){
+			grade = "B";
+		}
+		else if (scoreGrade >= 70 && scoreGrade < 80){
+			grade = "C";
+		}
+		else if (scoreGrade >= 60 && scoreGrade < 70){
+			grade = "D";
+		}
+		else{
+			grade = "F";
+		}
+		return grade;
+	}	
+// Is this the proper way to set the scoreGrade from the input of the user on the main class.
+	public float getScore(){
+		return score;
 	}
-private void setScore (double value){
-	score = value;
+	public void setScore(float scoreGrade){
+		score = scoreGrade;
 	}
-}
+	}	
+	
 
