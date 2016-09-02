@@ -36,7 +36,7 @@ public class Assignment {
 	public void setGrade(char graed){
 		grade = graed;
 	}
-	char getGrade(){
+	public char getGrade(){
 		return grade;
 	}
 	

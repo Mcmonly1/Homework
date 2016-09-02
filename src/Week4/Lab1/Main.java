@@ -13,7 +13,7 @@ public class Main {
 		score = userInput.nextFloat();
 		assignment.setScore(score);
 		assignment.CalculatedGrade(assignment.getGrade());
-		System.out.println("The grade you achieved was a " + assignment.CalculatedGrade(assignment.getGrade()));
+		System.out.println("The grade you achieved was a " + assignment.CalculatedGrade(assignment.getScore()));
 		userInput.close();
 	}
 
