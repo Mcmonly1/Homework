@@ -7,7 +7,6 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in);
 		
-		float score;
 		int questions;
 		int missed;
 		
@@ -21,9 +20,9 @@ public class Main {
 		exam.setQuestions(questions);
 		exam.setMissed(missed);
 		exam.examCalculator(questions, missed);
-// Lost on how to get points to assignment class and still be able to display points for each question in console.
-		exam.setPoints(points);
 		assignment.CalculatedGrade(assignment.getGrade());
+		System.out.println("The questions were worth " + exam.getPoints() + " points each.");
+		System.out.println("Your score was " +exam.getScore() + " out of 100.");
 		System.out.println("The grade you achieved was a " + assignment.CalculatedGrade(assignment.getScore()));
 		userInput.close();
 	}

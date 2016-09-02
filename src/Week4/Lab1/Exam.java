@@ -6,8 +6,9 @@ public class Exam extends Assignment {
 	int missed;
 	
 	public void examCalculator(int questions, int missed){
-		points = 100 / (questions - missed);
-		super.setScore(points);
+		points = 100 / (float) questions;
+		float score = points * (questions - missed);
+		super.setScore(score);
 	}
 
 	public float getPoints() {
@@ -29,3 +30,4 @@ public class Exam extends Assignment {
 		points = value;
 	}
 }
+
