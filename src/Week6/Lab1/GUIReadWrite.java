@@ -46,13 +46,6 @@ public static JTextField WriteTextArea;
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton WriteToFile = new JButton("Write To File");
-		WriteToFile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			System.out.println("test");
-			}
-		});
-		
 		JTextArea WriteTextArea = new JTextArea();
 		JScrollPane writeScrollPane = new JScrollPane(WriteTextArea);
 		WriteTextArea.setBounds(10, 11, 193, 154);
@@ -84,6 +77,11 @@ public static JTextField WriteTextArea;
 		contentPane.add(ReadListFromFile);
 		
 		JButton WritetoFile = new JButton("Write to File");
+		WritetoFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			System.out.println("test");
+			}
+		});
 		WritetoFile.setBounds(10, 176, 113, 23);
 		contentPane.add(WritetoFile);
 	}
