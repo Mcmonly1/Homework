@@ -7,15 +7,18 @@ public class week5lab1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
-		
+		String keepGoing = "y";
 		//User selection of calculator options.
-		
+		while(keepGoing.toUpperCase().equals("Y")) {
+
 		System.out.println("what would you like to do?"
 				+ "\n\t A.) Add."
 				+ "\n\t B.) Subtract."
 				+ "\n\t C.) Multiply."
 				+ "\n\t D.) Divide.");
 		String userChoice = userInput.next();
+		try {
+			
 		if (userChoice.length()== 1) {
 			char letter = userChoice.toCharArray()[0];
 		System.out.println("What is the first number you want to use?");
@@ -49,13 +52,23 @@ public class week5lab1 {
 			System.out.println("your answer is " + answerD);
 			break;
 			
-		default :
-			System.out.println("you toopid put a, b, c, or d, not other letter");
+		default:
+			System.out.println("please select a letter and not a number.");
+			keepGoing = "Y";
 			break;
+
 		}
 		}
-		else 
-			System.out.println("you toopid put a, b, c, or d, not other letter");
+
+		
+		System.out.println("Do you want to continue? (y/n)");
+		keepGoing = userInput.next();
+	} catch (Exception ex) {
+		System.out.println("please enter a number not a letter");
+		userInput.nextLine();
+		keepGoing = "Y";
+	}
+	}
 	}
 	public static float addition(float num1, float num2) {
 		float answer;
