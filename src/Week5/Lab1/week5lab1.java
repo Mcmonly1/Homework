@@ -3,12 +3,18 @@ package Week5.Lab1;
 import java.util.Scanner;
 
 public class week5lab1 {
-
+private static float num1;
+private static float num2;
+private static int taipe;
+private static boolean wrongletter = false;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner userInput = new Scanner(System.in);
+		
 		String keepGoing = "y";
+		
 		//User selection of calculator options.
+		
 		while(keepGoing.toUpperCase().equals("Y")) {
 
 		System.out.println("what would you like to do?"
@@ -18,13 +24,14 @@ public class week5lab1 {
 				+ "\n\t D.) Divide.");
 		String userChoice = userInput.next();
 		try {
+			System.out.println("What is the first number you want to use?");
+			float num1 = userInput.nextFloat();
+			System.out.println("What is the second number you want to use?");
+			float num2 = userInput.nextFloat();
+
 			
 		if (userChoice.length()== 1) {
 			char letter = userChoice.toCharArray()[0];
-		System.out.println("What is the first number you want to use?");
-		float num1 = userInput.nextFloat();
-		System.out.println("What is the second number you want to use?");
-		float num2 = userInput.nextFloat();
 		
 		switch(letter) {
 		
@@ -60,12 +67,15 @@ public class week5lab1 {
 		}
 		}
 
+
 		
 		System.out.println("Do you want to continue? (y/n)");
 		keepGoing = userInput.next();
-	} catch (Exception ex) {
 		System.out.println("please enter a number not a letter");
 		userInput.nextLine();
+		keepGoing = "Y";
+	} catch (Exception ex) {
+		System.out.println("Please enter a number not a letter");
 		keepGoing = "Y";
 	}
 	}
