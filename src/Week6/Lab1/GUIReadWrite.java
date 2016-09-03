@@ -48,7 +48,8 @@ public static JTextField WriteTextArea;
 		
 		JButton WriteToFile = new JButton("Write To File");
 		WriteToFile.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
+			System.out.println("test");
 			}
 		});
 		
