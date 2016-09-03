@@ -16,6 +16,7 @@ private static boolean wrongletter = false;
 		//User selection of calculator options.
 		
 		while(keepGoing.toUpperCase().equals("Y")) {
+			
 
 		System.out.println("what would you like to do?"
 				+ "\n\t A.) Add."
@@ -24,10 +25,6 @@ private static boolean wrongletter = false;
 				+ "\n\t D.) Divide.");
 		String userChoice = userInput.next();
 		try {
-			System.out.println("What is the first number you want to use?");
-			float num1 = userInput.nextFloat();
-			System.out.println("What is the second number you want to use?");
-			float num2 = userInput.nextFloat();
 
 			
 		if (userChoice.length()== 1) {
@@ -37,26 +34,22 @@ private static boolean wrongletter = false;
 		
 		case 'A':
 		case 'a':
-			float answerA = week5lab1.addition(num1, num2);
-			System.out.println("your answer is " + answerA);
+			selectMathType(1);
 			break;
 			
 		case 'B':
 		case 'b':
-			float answerB = week5lab1.subtraction(num1, num2);
-			System.out.println("your answer is " + answerB);
+			selectMathType(2);
 			break;
 		
 		case 'C':
 		case 'c':
-			float answerC = week5lab1.multiply(num1, num2);
-			System.out.println("your answer is " + answerC);
+			selectMathType(3);
 			break;
 			
 		case 'D':
 		case 'd':
-			float answerD = week5lab1.divide(num1, num2);
-			System.out.println("your answer is " + answerD);
+			selectMathType(4);
 			break;
 			
 		default:
@@ -65,20 +58,46 @@ private static boolean wrongletter = false;
 			break;
 
 		}
-		}
+		System.out.println("What is the first number you want to use?");
+		float num1 = userInput.nextFloat();
+		System.out.println("What is the second number you want to use?");
+		float num2 = userInput.nextFloat();
 
+		}
+		
+		
 
 		
-		System.out.println("Do you want to continue? (y/n)");
-		keepGoing = userInput.next();
-		System.out.println("please enter a number not a letter");
-		userInput.nextLine();
-		keepGoing = "Y";
+		
 	} catch (Exception ex) {
 		System.out.println("Please enter a number not a letter");
-		keepGoing = "Y";
+		keepGoing = "Y";}
 	}
+	
 	}
+	public static void selectMathType(int i) {
+		taipe = i;
+	}
+	public static void doMath() {
+		float answer = 0;
+		switch(taipe)
+		{
+		case 1:
+			answer = week5lab1.addition(num1, num2);
+			System.out.println("Your answer is " + answer);
+			break;
+		case 2:
+			answer = week5lab1.subtraction(num1, num2);
+			break;
+		case 3:
+			answer = week5lab1.multiply(num1, num2);
+			break;
+		case 4:
+			answer = week5lab1.divide(num1,  num2);
+			break;
+		}
+		System.out.println("Your answer is " + answer);
+		
 	}
 	public static float addition(float num1, float num2) {
 		float answer;
@@ -92,13 +111,18 @@ private static boolean wrongletter = false;
 	}
 	public static float multiply(float num1, float num2) {
 		float answer;
-		answer = num1 * num2;
+		answer =  num1 * num2;
 		return answer;
 	}
 	public static float divide(float num1, float num2) {
-		float answer;
-		answer = num1 / num2;
-		return answer;
+		float answer = 0;
+		try {
+		answer = (int)num1 / (int)num2;
+	} catch (java.lang.ArithmeticException ae) {
+		System.out.println("please do not divide by 0");
+	}	return answer;
+	
 	}
 
 }
+ 
